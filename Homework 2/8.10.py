@@ -1,3 +1,4 @@
+#Dan Doan 1986920
 def removal(word):
     newword = ""
     for x in word:
