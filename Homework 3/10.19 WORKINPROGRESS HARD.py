@@ -20,8 +20,12 @@ class ShoppingCart:
     self.customer_name = "none"
     self.current_date = "January 1, 2016"
     self.cart_items = []
-  def add_item():
-    #self.cart_items.append(ItemToPurchase(item_name))??
+  def add_item(ItemToPurchase, item_name=None):
+    self.cart_items.append((item_name))
+shop = ShoppingCart
+shop.add_item("oreos")
+
+  """
   def remove_item(item_name):
     if item_name in self.cart_items:
       self.cart_items.remove(item_name)
@@ -44,7 +48,7 @@ class ShoppingCart:
   def print_descriptions():
     for x in self.cart_items:
       print(ItemToPurchase.item_description(x))
-
+  """
 if __name__=="__main__":
   item = ItemToPurchase()
   print ("Item 1")
