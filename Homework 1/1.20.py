@@ -1,6 +1,6 @@
 # Dan Doan 1986920
 user_num = (int(input("Enter integer:\n")))
-
+#printing out all required and then adding the input when needed
 print("You entered:", user_num)
 print(user_num, "squared is", user_num ** 2)
 print("And", user_num, "cubed is", user_num ** 3, "!!")
