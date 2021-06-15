@@ -1,5 +1,6 @@
 # Dan Doan 1986920
+# nothing much here
 userNum = int(input())
-userNumSquared = userNum ** 2  # Bug here; fix it when instructed
+userNumSquared = userNum ** 2
 
-print(userNumSquared, end='\n')  # Output formatting issue here; fix it when instructed
+print(userNumSquared, end='\n')
