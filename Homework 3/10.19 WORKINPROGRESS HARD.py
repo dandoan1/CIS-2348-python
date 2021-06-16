@@ -8,24 +8,28 @@ class ItemToPurchase:
     self.item_name = ""
     self.item_price = 0
     self.item_quantity = 0
+    self.item_description = "none"
   def print_item_cost(self):
     print("{} {} @ ${:.0f} = ${:.0f}".format(self.item_name, self.item_quantity, self.item_price, (self.item_price*self.item_quantity)))
   def print_item_description(self):
     print("{}: {}".format(self.item_name, self.item_description))
 class ShoppingCart:
-  customer_name = "none"
-  current_date = "January 1, 2016"
-  cart_items = []
   def init(self):
     self.customer_name = "none"
     self.current_date = "January 1, 2016"
     self.cart_items = []
-  def add_item(ItemToPurchase, item_name=None):
-    self.cart_items.append((item_name))
-shop = ShoppingCart
-shop.add_item("oreos")
+  def add_item(ItemToPurchase):
+      name1 = input("""ADD ITEM TO CART
+Enter the item name:\n""")
+      description1 = input("Enter the item description:\n")
+      price1 = input("Enter the item price:\n")
+      quantity1 = input("Enter the item quantity:\n")
+      ItemToPurchase.cart_items.append(name1)
+      print(ItemToPurchase.cart_items)
 
-  """
+shop = ShoppingCart
+#shop.cart_items
+"""
   def remove_item(item_name):
     if item_name in self.cart_items:
       self.cart_items.remove(item_name)
@@ -49,6 +53,7 @@ shop.add_item("oreos")
     for x in self.cart_items:
       print(ItemToPurchase.item_description(x))
   """
+"""
 if __name__=="__main__":
   item = ItemToPurchase()
   print ("Item 1")
@@ -68,4 +73,4 @@ if __name__=="__main__":
   item.item_price = price2
   item.item_quantity = quantity2
   item.print_item_cost()
-  print("\nTotal: ${:.0f}".format(price1*quantity1+price2*quantity2))
+  print("\nTotal: ${:.0f}".format(price1*quantity1+price2*quantity2))"""
