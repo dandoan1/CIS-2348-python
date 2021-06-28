@@ -147,27 +147,50 @@ while True:
                 try:
                     index = return2ndhighest(phone_list, manufacturer)
                     a = list(phone_list.items())[index + 1]
+                    b = list(phone_list.items())[index - 1]
                     # this line checks to make sure that the same manufacturer is not printed as a recommendation
                     # if it is the same manufacturer it raises an error which in turns print nothing
                     if a[1][1] == manufacturer:
                         raise ValueError
-                    print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0], a[1][1],
-                                                                                                      a[1][2], a[1][3]))
-                except Exception:
-                    pass
-                try:
-                    # same thing as the other try above
-                    b = list(phone_list.items())[index - 1]
-                    # make sure that it does not print the last item on the list if the first item matches the
-                    # description of given
-                    if index == 0:
-                        raise ValueError
                     if b[1][1] == manufacturer:
                         raise ValueError
-                    print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0], b[1][1],
-                                                                                                      b[1][2], b[1][3]))
-                except Exception:
-                    pass
+                    if index == 0:
+                        raise ValueError
+                    if abs((int(a[1][3]) - int(z[3]))) > abs((int(b[1][3]) - int(z[3]))):
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0],
+                                                                                                          b[1][1],
+                                                                                                          b[1][2],
+                                                                                                          b[1][3]))
+                    else:
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0],
+                                                                                                          a[1][1],
+                                                                                                          a[1][2],
+                                                                                                          a[1][3]))
+                except:
+                    #now trying for single ones
+                    try:
+                        b = list(phone_list.items())[index - 1]
+                        if b[1][1] == manufacturer:
+                            raise ValueError
+                        if index == 0:
+                            raise ValueError
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0],
+                                                                                                          b[1][1],
+                                                                                                          b[1][2],
+                                                                                                          b[1][3]))
+                    except Exception:
+                        pass
+                    try:
+                        a = list(phone_list.items())[index + 1]
+                        if a[1][1] == manufacturer:
+                            raise ValueError
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0],
+                                                                                                          a[1][1],
+                                                                                                          a[1][2],
+                                                                                                          a[1][3]))
+                    except Exception:
+                        pass
+
     # same as the above
     if q.find("laptop") != (-1):
         for manufacturer in manufacturer_order_list:
@@ -180,22 +203,49 @@ while True:
                 try:
                     index = return2ndhighest(laptop_list, manufacturer)
                     a = list(laptop_list.items())[index + 1]
-                    if a[1][1] == manufacturer:
-                        raise ValueError
-                    print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0], a[1][1],
-                                                                                                      a[1][2], a[1][3]))
-                except Exception:
-                    pass
-                try:
                     b = list(laptop_list.items())[index - 1]
-                    if index == 0:
+                    # this line checks to make sure that the same manufacturer is not printed as a recommendation
+                    # if it is the same manufacturer it raises an error which in turns print nothing
+                    if a[1][1] == manufacturer:
                         raise ValueError
                     if b[1][1] == manufacturer:
                         raise ValueError
-                    print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0], b[1][1],
-                                                                                                      b[1][2], b[1][3]))
-                except Exception:
-                    pass
+                    if index == 0:
+                        raise ValueError
+                    if abs((int(a[1][3]) - int(z[3]))) > abs((int(b[1][3]) - int(z[3]))):
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0],
+                                                                                                          b[1][1],
+                                                                                                          b[1][2],
+                                                                                                          b[1][3]))
+                    else:
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0],
+                                                                                                          a[1][1],
+                                                                                                          a[1][2],
+                                                                                                          a[1][3]))
+                except:
+                    # now trying for single ones
+                    try:
+                        b = list(laptop_list.items())[index - 1]
+                        if b[1][1] == manufacturer:
+                            raise ValueError
+                        if index == 0:
+                            raise ValueError
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0],
+                                                                                                          b[1][1],
+                                                                                                          b[1][2],
+                                                                                                          b[1][3]))
+                    except Exception:
+                        pass
+                    try:
+                        a = list(laptop_list.items())[index + 1]
+                        if a[1][1] == manufacturer:
+                            raise ValueError
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0],
+                                                                                                          a[1][1],
+                                                                                                          a[1][2],
+                                                                                                          a[1][3]))
+                    except Exception:
+                        pass
     # same as the above
     if q.find("tower") != (-1):
         for manufacturer in manufacturer_order_list:
@@ -208,19 +258,46 @@ while True:
                 try:
                     index = return2ndhighest(tower_list, manufacturer)
                     a = list(tower_list.items())[index + 1]
-                    if a[1][1] == manufacturer:
-                        raise ValueError
-                    print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0], a[1][1],
-                                                                                                      a[1][2], a[1][3]))
-                except Exception:
-                    pass
-                try:
                     b = list(tower_list.items())[index - 1]
-                    if index == 0:
+                    # this line checks to make sure that the same manufacturer is not printed as a recommendation
+                    # if it is the same manufacturer it raises an error which in turns print nothing
+                    if a[1][1] == manufacturer:
                         raise ValueError
                     if b[1][1] == manufacturer:
                         raise ValueError
-                    print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0], b[1][1],
-                                                                                                      b[1][2], b[1][3]))
-                except Exception:
-                    pass
+                    if index == 0:
+                        raise ValueError
+                    if abs((int(a[1][3]) - int(z[3]))) > abs((int(b[1][3]) - int(z[3]))):
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0],
+                                                                                                          b[1][1],
+                                                                                                          b[1][2],
+                                                                                                          b[1][3]))
+                    else:
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0],
+                                                                                                          a[1][1],
+                                                                                                          a[1][2],
+                                                                                                          a[1][3]))
+                except:
+                    # now trying for single ones
+                    try:
+                        b = list(tower_list.items())[index - 1]
+                        if b[1][1] == manufacturer:
+                            raise ValueError
+                        if index == 0:
+                            raise ValueError
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(b[1][0],
+                                                                                                          b[1][1],
+                                                                                                          b[1][2],
+                                                                                                          b[1][3]))
+                    except Exception:
+                        pass
+                    try:
+                        a = list(tower_list.items())[index + 1]
+                        if a[1][1] == manufacturer:
+                            raise ValueError
+                        print("You may, also, consider: ID= {}, Brand= {}, Type= {}, Price= ${}\n".format(a[1][0],
+                                                                                                          a[1][1],
+                                                                                                          a[1][2],
+                                                                                                          a[1][3]))
+                    except Exception:
+                        pass
